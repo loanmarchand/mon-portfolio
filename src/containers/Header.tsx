@@ -1,7 +1,7 @@
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
+import {Link} from "react-router-dom";
 
-export default function Header()
-{
+export default function Header() {
     return (
         <motion.header
             className="bg-gray-800 p-4"
@@ -16,10 +16,10 @@ export default function Header()
                     </div>
                 </a>
                 <nav className="space-x-4">
-                    <a href="/" className="text-gray-300 hover:text-white">Home</a>
-                    <a href="/projects" className="text-gray-300 hover:text-white">Projets</a>
-                    <a href="/about" className="text-gray-300 hover:text-white">A propos</a>
-                    <a href="/contact" className="text-gray-300 hover:text-white">Contact</a>
+                    <Link to="/" className="text-gray-300 hover:text-white">Home</Link>
+                    <Link to="/Projects" className="text-gray-300 hover:text-white">Projets</Link>
+                    <Link to="/About" className="text-gray-300 hover:text-white">A propos</Link>
+                    <Link to="/Contact" className="text-gray-300 hover:text-white">Contact</Link>
                 </nav>
             </div>
         </motion.header>

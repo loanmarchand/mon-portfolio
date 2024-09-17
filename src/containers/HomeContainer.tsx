@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import {Link} from "react-router-dom";
 export default function HomeContainer()
 {
     return (
@@ -12,14 +12,12 @@ export default function HomeContainer()
             >
                 <h1 className="text-4xl font-bold mb-4">Bienvenue sur mon portfolio</h1>
                 <p className="text-lg mb-8">Découvrez mes projets, compétences et expériences.</p>
-                <motion.a
-                    href="/projects"
+                <Link
+                    to="/Projects"
                     className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700"
-                    whileHover={{scale: 1.1}}
-                    whileTap={{scale: 0.9}}
                 >
                     Mes projets
-                </motion.a>
+                </Link>
             </motion.div>
         </section>
     );
