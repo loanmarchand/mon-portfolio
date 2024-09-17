@@ -70,7 +70,7 @@ export default function CvContainer() {
                     </div>
                     <div className="mb-4">
                         <h3 className="text-xl font-bold">CESS Technique de transition en informatique</h3>
-                        <span className="text-gray-600">Helmo, Liège - 2015 - 2019</span>
+                        <span className="text-gray-600">Institut Saint-Roch, Marche-En-Famenne - 2015 - 2019</span>
                     </div>
                 </motion.div>
 

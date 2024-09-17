@@ -1,7 +1,5 @@
 import {motion} from "framer-motion";
-import Header from "../containers/Header.tsx";
 import {FaFacebook, FaFacebookMessenger, FaGithub, FaLinkedin, FaXTwitter} from "react-icons/fa6";
-import Footer from "../containers/Footer.tsx";
 
 export default function Contact() {
     const handleMessengerClick = () => {
@@ -10,7 +8,6 @@ export default function Contact() {
 
     return (
         <>
-            <Header/>
             <section id="contact" className="bg-gray-100 py-20">
                 <div className="container mx-auto text-center">
                     <motion.h2
@@ -117,7 +114,6 @@ export default function Contact() {
                     </motion.button>
                 </div>
             </section>
-            <Footer/>
         </>
     );
 }
