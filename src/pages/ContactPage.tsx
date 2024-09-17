@@ -19,7 +19,7 @@ export default function Contact() {
                         animate={{opacity: 1}}
                         transition={{duration: 1}}
                     >
-                        Contact Me
+                        Contactez-moi
                     </motion.h2>
                     <div className="flex justify-center space-x-4 mb-8">
                         <motion.a

@@ -48,7 +48,7 @@ export default function CvContainer() {
                 >
                     <h2 className="text-2xl font-semibold mb-4">Experience</h2>
                     <ExperienceComponent title="Etudiant IT - LPM Holding" date="Septembre 2024 - En cours"
-                                         description={["Gestion de la base de données"]}/>
+                                         description={["Gestion de la base de données","Amélioration du logiciel interne en PHP, Laravel","gestion de différents logiciels : Mews, Until, Resengo", "Dépannage informatique en tout genre"]}/>
                     <ExperienceComponent title="Moniteur Sportif - Adventure Valley" date="Juillet 2020 - En cours"
                                          description={["Accueillir les clients et leur expliquer les différentes activités disponibles.", "Former et encadrer les équipes pour assurer le bon déroulement des activités.", "Assurer la sécurité des participants et intervenir en cas d'urgence.", "Promu responsable d'activité et secouriste après plusieurs années, avec la responsabilité de gérer une équipe de 5 à 6 personnes.", "Gérer les problèmes et les situations d'urgence avec efficacité."]}/>
                     <ExperienceComponent title="Serveur - Le Sanglier des Ardennes" date="Octobre 2022 - Mars 2023"
