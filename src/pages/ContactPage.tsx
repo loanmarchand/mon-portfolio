@@ -1,45 +1,45 @@
 import { motion } from "framer-motion";
 import { FaFacebook, FaFacebookMessenger, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import React, { useState } from "react";
-import emailjs from 'emailjs-com';
+import React, {useRef, useState} from "react";
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        message: ""
-    });
+
 
     const [statusMessage, setStatusMessage] = useState("");
+    const form = useRef();
+    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
+    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
+    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
+
 
     const handleMessengerClick = () => {
         window.open('https://m.me/loan.marchand2', '_blank');
     };
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
+const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+    if (!form.current) return;
 
-        // Utiliser les variables d'environnement pour EmailJS
-        const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-        const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-        const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
+    emailjs
+        .sendForm(
+            serviceID,
+            templateID,
+            form.current,
+            userID
+        )
+        .then(
+            () => {
+                setStatusMessage('Votre message a bien été envoyé !');
+            },
+            (error) => {
+                setStatusMessage('Une erreur est survenue, veuillez réessayer.');
+                console.error(error.text);
+            }
+        );
+};
 
-        emailjs.send(serviceID, templateID, formData, userID)
-            .then(() => {
-                setStatusMessage("Message envoyé avec succès !");
-                setFormData({ name: "", email: "", message: "" }); // Réinitialise le formulaire
-            })
-            .catch(() => {
-                setStatusMessage("Erreur lors de l'envoi du message. Veuillez réessayer.");
-            });
-    };
 
     return (
         <>
@@ -93,7 +93,7 @@ export default function Contact() {
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ duration: 1 }}
                     >
-                        <form onSubmit={handleSubmit}>
+                        <form ref={form} onSubmit={sendEmail}>
                             <div className="mb-4">
                                 <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
                                     Nom
@@ -101,9 +101,7 @@ export default function Contact() {
                                 <input
                                     type="text"
                                     id="name"
-                                    name="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
+                                    name="user_name"
                                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                     required
                                 />
@@ -115,9 +113,7 @@ export default function Contact() {
                                 <input
                                     type="email"
                                     id="email"
-                                    name="email"
-                                    value={formData.email}
-                                    onChange={handleChange}
+                                    name="user_email"
                                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                     required
                                 />
@@ -130,8 +126,6 @@ export default function Contact() {
                                     id="message"
                                     name="message"
                                     rows={4}
-                                    value={formData.message}
-                                    onChange={handleChange}
                                     className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                                     required
                                 ></textarea>
