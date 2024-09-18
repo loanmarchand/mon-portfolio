@@ -1,45 +1,44 @@
 import { motion } from "framer-motion";
 import { FaFacebook, FaFacebookMessenger, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import React, {useRef, useState} from "react";
+import React, { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
-
-
     const [statusMessage, setStatusMessage] = useState("");
-    const form = useRef();
+
+    // Ajout de type explicite pour useRef
+    const form = useRef<HTMLFormElement | null>(null);
+
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
     const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
-
 
     const handleMessengerClick = () => {
         window.open('https://m.me/loan.marchand2', '_blank');
     };
 
-const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
 
-    if (!form.current) return;
+        if (!form.current) return;
 
-    emailjs
-        .sendForm(
-            serviceID,
-            templateID,
-            form.current,
-            userID
-        )
-        .then(
-            () => {
-                setStatusMessage('Votre message a bien été envoyé !');
-            },
-            (error) => {
-                setStatusMessage('Une erreur est survenue, veuillez réessayer.');
-                console.error(error.text);
-            }
-        );
-};
-
+        emailjs
+            .sendForm(
+                serviceID,
+                templateID,
+                form.current,
+                userID
+            )
+            .then(
+                () => {
+                    setStatusMessage('Votre message a bien été envoyé !');
+                },
+                (error) => {
+                    setStatusMessage('Une erreur est survenue, veuillez réessayer.');
+                    console.error(error.text);
+                }
+            );
+    };
 
     return (
         <>
