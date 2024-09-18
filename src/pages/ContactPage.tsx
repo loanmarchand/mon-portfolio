@@ -7,7 +7,7 @@ export default function Contact() {
 
 
     const [statusMessage, setStatusMessage] = useState("");
-    const form = useRef();
+    const form = useRef<HTMLFormElement | null>(null);
     const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
     const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
     const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
