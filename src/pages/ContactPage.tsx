@@ -9,9 +9,9 @@ export default function Contact() {
     // Ajout de type explicite pour useRef
     const form = useRef<HTMLFormElement | null>(null);
 
-    const serviceID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!;
-    const templateID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!;
-    const userID = process.env.NEXT_PUBLIC_EMAILJS_USER_ID!;
+    const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID!;
+    const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID!;
+    const userID = import.meta.env.VITE_EMAILJS_USER_ID!;
 
     const handleMessengerClick = () => {
         window.open('https://m.me/loan.marchand2', '_blank');
