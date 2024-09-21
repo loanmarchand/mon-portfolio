@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { FaFacebook, FaFacebookMessenger, FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
-import React, { useRef, useState } from "react";
+import {FormEvent, useRef, useState} from "react";
 import emailjs from '@emailjs/browser';
 
 export default function Contact() {
@@ -17,10 +17,16 @@ export default function Contact() {
         window.open('https://m.me/loan.marchand2', '_blank');
     };
 
-    const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    const sendEmail = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
 
         if (!form.current) return;
+
+        //Vérification des champs
+        if (!form.current.checkValidity()) {
+            setStatusMessage('Veuillez remplir tous les champs.');
+            return;
+        }
 
         emailjs
             .sendForm(

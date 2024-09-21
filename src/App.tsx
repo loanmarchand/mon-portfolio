@@ -6,6 +6,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 import Projects from "./pages/ProjectsPage";
 import Header from './containers/Header';
 import Footer from "./containers/Footer.tsx";
+import { Analytics } from '@vercel/analytics/react';
+
 
 function App() {
     return (
@@ -19,7 +21,9 @@ function App() {
                 <Route path="*" element={<NotFoundPage />} />
             </Routes>
             <Footer />
+            <Analytics />
         </BrowserRouter>
+
     );
 }
 

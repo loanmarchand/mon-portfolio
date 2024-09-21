@@ -13,7 +13,6 @@ const GithubProjects: React.FC = () => {
     const [repos, setRepos] = useState<GithubRepo[]>([]);
 
     useEffect(() => {
-        // Remplacer 'votre_nom_d'utilisateur_github' par ton nom d'utilisateur GitHub
         axios
             .get<GithubRepo[]>("https://api.github.com/users/loanmarchand/repos?sort=updated")
             .then((response) => {
