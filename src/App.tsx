@@ -7,6 +7,7 @@ import Projects from './pages/ProjectsPage';
 import Header from './containers/Header';
 import Footer from './containers/Footer.tsx';
 import { Analytics } from '@vercel/analytics/react';
+import './i18n.js';
 
 
 function App() {

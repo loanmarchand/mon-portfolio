@@ -1,10 +1,12 @@
+import { useTranslation } from 'react-i18next';
 
 export default function NotFoundPage() {
-    return (
+  const { t } = useTranslation();
+  return (
         <>
             <div className="container mx-auto  flex flex-col justify-center items-center">
                 <h1 className="text-4xl font-bold">404 Not Found</h1>
-                <p>Sorry, the page you are looking for does not exist.</p>
+              <p>{t('404')}</p>
             </div>
         </>
     );

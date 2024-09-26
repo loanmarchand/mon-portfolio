@@ -1,7 +1,9 @@
-import {motion} from "framer-motion";
-import ProfilePicture from "../components/ProfilePicture.tsx";
+import { motion } from 'framer-motion';
+import ProfilePicture from '../components/ProfilePicture.tsx';
+import { useTranslation } from 'react-i18next';
 
 export default function BioContainer() {
+    const { t } = useTranslation();
     return (
         <section className="bg-white py-20">
             <div className="container mx-auto flex flex-col md:flex-row items-center">
@@ -12,9 +14,8 @@ export default function BioContainer() {
                     animate={{opacity: 1}}
                     transition={{delay: 0.5, duration: 1}}
                 >
-                    <h2 className="text-3xl font-bold mb-4">Bonjour, je m'appelle Loan Marchand</h2>
-                    <p className="text-lg">Je suis un développeur passionné avec une bonne base en Java et C#. J'adore
-                        créer des solutions innovantes et travailler sur des projets stimulants.</p>
+                    <h2 className="text-3xl font-bold mb-4">{t('hello')}</h2>
+                    <p className="text-lg">{t('presentation')}</p>
                 </motion.div>
             </div>
         </section>
