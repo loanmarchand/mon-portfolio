@@ -8,6 +8,7 @@ import Header from './containers/Header';
 import Footer from './containers/Footer.tsx';
 import { Analytics } from '@vercel/analytics/react';
 import './i18n.js';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
           <Footer />
           <Analytics />
         </BrowserRouter>
+        <SpeedInsights />
       </div>
     );
 }
