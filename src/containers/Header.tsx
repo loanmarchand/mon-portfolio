@@ -29,10 +29,16 @@ export default function Header() {
                   <Link to="/Contact" className="text-gray-300 hover:text-white">Contact</Link>
               </nav>
               <div className="text-white flex items-center space-x-2">
-                  <div onClick={() => changeLanguage('fr')} className="cursor-pointer hover:text-accent">
+                  <div
+                    onClick={() => changeLanguage('fr')}
+                    className={`cursor-pointer ${i18n.language !== 'fr' ? 'opacity-50' : 'opacity-100'}`}
+                  >
                       <Flag code="FR" style={{ width: '30px', height: '20px' }} />
                   </div>
-                  <div onClick={() => changeLanguage('en')} className="cursor-pointer hover:text-accent">
+                  <div
+                    onClick={() => changeLanguage('en')}
+                    className={`cursor-pointer ${i18n.language !== 'en' ? 'opacity-50' : 'opacity-100'}`}
+                  >
                       <Flag code="GB" style={{ width: '30px', height: '20px' }} />
                   </div>
               </div>

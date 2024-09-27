@@ -68,7 +68,7 @@ export default function Contact() {
                                          link={'https://facebook.com/loan.marchand2'} />
                         <LinkSocialMedia color={'text-black'} icon={FaXTwitter} link={'https://x.com/loanmarchand27'} />
                         <LinkSocialMedia color={'text-blue-700'} icon={FaLinkedin}
-                                         link={'https://linkedin.com/in/loan-marchand-8056811a2'} />
+                                         link={'https://linkedin.com/in/loan-marchand'} />
                         <LinkSocialMedia color={'text-black'} icon={FaGithub}
                                          link={'https://github.com/loanmarchand'} />
                         <LinkSocialMedia link={'mailto:loanmarchand7@gmail.com'} color={'text-blue-600'}
