@@ -79,14 +79,14 @@ export default function Contact() {
 
                   {/* Formulaire de contact */}
                   <motion.div
-                    className="bg-white shadow-xl rounded-lg p-8 mb-8 w-full max-w-lg mx-auto"
+                    className="bg-gray-900 border border-yellow-400 shadow-lg rounded-lg p-8 mb-8 w-full max-w-lg mx-auto"
                     initial={{ y: 50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 1 }}
                   >
                       <form ref={form} onSubmit={sendEmail}>
                           <div className="mb-6">
-                              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                              <label className="block text-white text-sm font-bold mb-2" htmlFor="name">
                                   {t('contact_form_name')}
                               </label>
                               <input
@@ -98,7 +98,7 @@ export default function Contact() {
                               />
                           </div>
                           <div className="mb-6">
-                              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                              <label className="block text-white text-sm font-bold mb-2" htmlFor="email">
                                   Email
                               </label>
                               <input
@@ -110,7 +110,7 @@ export default function Contact() {
                               />
                           </div>
                           <div className="mb-6">
-                              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
+                              <label className="block text-white text-sm font-bold mb-2" htmlFor="message">
                                   Message
                               </label>
                               <textarea
