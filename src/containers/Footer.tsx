@@ -1,17 +1,21 @@
-import { motion } from "framer-motion";
+import { motion } from 'framer-motion';
 
-export default function Footer()
-{
+export default function Footer() {
     return (
-        <motion.footer
-            className="footer bg-gray-800 text-white py-4"
-            initial={{y: 250}}
-            animate={{y: 0}}
-            transition={{type: 'spring', stiffness: 120}}
-        >
-            <div className="container mx-auto text-center">
-                <p>&copy; 2024 Loan Marchand. All Rights Reserved.</p>
-            </div>
-        </motion.footer>
+      <motion.footer
+        className="bg-gradient-to-r from-black via-black to-pink-600 text-white py-3 mt-auto border-t shadow-inner"
+        initial={{ y: 250 }}
+        animate={{ y: 0 }}
+        transition={{ type: 'spring', stiffness: 120 }}
+      >
+          <div className="container mx-auto text-center">
+              <p className="text-lg font-semibold tracking-wide">
+                  &copy; 2024 Loan Marchand. All Rights Reserved.
+              </p>
+              <p className="text-sm mt-1 text-gray-400">
+                  Designed with ❤️ and React
+              </p>
+          </div>
+      </motion.footer>
     );
 }

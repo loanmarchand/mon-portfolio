@@ -49,6 +49,7 @@ const resources = {
       skills_frameworks: 'Frameworks',
       skills_tools: 'Tools',
       skills_soft_skills: 'Soft Skills',
+      back_home: 'Back to home',
     },
   },
   fr: {
@@ -97,6 +98,7 @@ const resources = {
       skills_frameworks: 'Frameworks',
       skills_tools: 'Outils',
       skills_soft_skills: 'Compétences relationnelles',
+      back_home: 'Retour à l\'accueil',
 
 
     },

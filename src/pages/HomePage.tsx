@@ -3,28 +3,41 @@ import Loader from '../components/Loader';
 import HomeContainer from '../containers/HomeContainer';
 import BioContainer from '../containers/BioContainer';
 import SkillsContainer from '../containers/SkillsContainer';
+import { motion } from 'framer-motion';
 
 export default function HomePage() {
   const [loading, setLoading] = useState(true);
 
-  // Simule un délai de chargement pour afficher le loader
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 1500);
+    const hasVisited = localStorage.getItem('hasVisited');
 
-    return () => clearTimeout(timer); // Nettoyage du timer
+    if (!hasVisited) {
+      const timer = setTimeout(() => {
+        setLoading(false);
+        localStorage.setItem('hasVisited', 'true');
+      }, 1500);
+
+      return () => clearTimeout(timer);
+    } else {
+      setLoading(false);
+    }
   }, []);
 
   return (
-    <>
+    <div className="bg-gradient-to-r from-black via-black to-pink-600 min-h-screen">
       {loading ? (
-        <Loader /> // Affiche le loader pendant le chargement
+        <Loader />
       ) : (
-        <>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1.5 }}
+        >
           <HomeContainer />
           <BioContainer />
           <SkillsContainer />
-        </>
+        </motion.div>
       )}
-    </>
+    </div>
   );
 }

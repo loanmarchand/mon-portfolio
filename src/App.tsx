@@ -12,25 +12,26 @@ import { SpeedInsights } from '@vercel/speed-insights/react';
 
 
 function App() {
-    return (
-      <div className="flex flex-col min-h-screen">
-        <BrowserRouter>
-          <Header /> {/* Le header est en dehors des routes pour qu'il soit visible sur toutes les pages */}
-          <main className="flex-grow">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/About" element={<About />} />
-              <Route path="/Contact" element={<Contact />} />
-              <Route path="/Projects" element={<Projects />} />
-              <Route path="*" element={<NotFoundPage />} />
-            </Routes>
-          </main>
-          <Footer />
-          <Analytics />
-        </BrowserRouter>
-        <SpeedInsights />
-      </div>
-    );
+  return (
+    <div className="flex flex-col min-h-screen">
+      <BrowserRouter>
+        <Header /> {/* Header fixe en haut de la page */}
+        <main className="flex-grow pt-16"> {/* Ajoute un padding-top pour compenser la hauteur du header */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/About" element={<About />} />
+            <Route path="/Contact" element={<Contact />} />
+            <Route path="/Projects" element={<Projects />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        </main>
+        <Footer /> {/* Le footer sera toujours en bas */}
+        <Analytics />
+      </BrowserRouter>
+      <SpeedInsights />
+    </div>
+  );
 }
 
 export default App;
+
