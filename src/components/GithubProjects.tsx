@@ -35,9 +35,6 @@ const GithubProjects: React.FC = () => {
               >
                 <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-2xl">
                   <h3 className="text-2xl font-bold mb-2">{repo.name}</h3>
-                  {/*<p className="text-gray-600 mb-4">
-                            {repo.description || "Pas de description disponible."}
-                        </p>*/}
                     </div>
               </a>
             ))}

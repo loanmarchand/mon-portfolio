@@ -7,7 +7,8 @@ export default function HomeContainer()
   const { t } = useTranslation();
   return (
         <section id="home" className="bg-gray-100 py-20">
-            <motion.div
+
+          <motion.div
                 className="container mx-auto text-center"
                 initial={{opacity: 0}}
                 animate={{opacity: 1}}

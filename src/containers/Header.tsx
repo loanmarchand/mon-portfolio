@@ -8,12 +8,12 @@ export default function Header() {
     const { t } = useTranslation();
 
     const changeLanguage = (lng: string) => {
-        i18n.changeLanguage(lng);
+        i18n.changeLanguage(lng).then(r => console.log(r));
     };
 
     return (
       <motion.header
-        className="bg-gray-800 p-4"
+        className="bg-gray-800 p-4 fixed top-0 w-full z-50"
         initial={{ y: -250 }}
         animate={{ y: 0 }}
         transition={{ type: 'spring', stiffness: 120 }}
