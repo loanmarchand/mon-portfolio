@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 export default function Footer() {
     return (
       <motion.footer
-        className="bg-gradient-to-r from-black via-black to-pink-600 text-white py-3 mt-auto border-t shadow-inner"
+        className="bg-gray-800 text-white py-3 mt-auto border-t border-yellow-400 shadow-inner"
         initial={{ y: 250 }}
         animate={{ y: 0 }}
         transition={{ type: 'spring', stiffness: 120 }}

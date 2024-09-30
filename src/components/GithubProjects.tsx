@@ -33,7 +33,7 @@ const GithubProjects: React.FC = () => {
               rel="noopener noreferrer"
               className="block bg-gradient-to-r from-yellow-400 via-yellow-500 to-pink-600 rounded-lg p-1 transition-all duration-300 hover:scale-105"
             >
-                <div className="bg-black rounded-lg shadow-lg p-6 hover:shadow-2xl transition duration-300">
+              <div className="bg-gray-800 rounded-lg shadow-lg p-6 hover:shadow-2xl transition duration-300">
                     <h3 className="text-2xl font-bold text-white mb-2">{repo.name}</h3>
                     {repo.description && <p className="text-gray-300">{repo.description}</p>}
                 </div>

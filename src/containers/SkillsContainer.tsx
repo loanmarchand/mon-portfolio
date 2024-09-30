@@ -28,14 +28,14 @@ export default function SkillsContainer() {
             {skills.map((skill, index) => (
               <Tilt className="Tilt" options={{ max: 25, scale: 1.05 }} key={index}>
                 <motion.div
-                  className="relative bg-white shadow-xl rounded-lg p-6 w-64 overflow-hidden transition-all duration-300 transform hover:scale-105"
+                  className="relative bg-gray-800 shadow-xl rounded-lg p-6 w-64 overflow-hidden transition-all duration-300 transform hover:scale-105"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                   onMouseEnter={() => setHoveredSkill(index)}
                   onMouseLeave={() => setHoveredSkill(null)}
                 >
                   <h3 className="text-xl font-semibold mb-2 text-yellow-400">{skill.name}</h3>
-                  <p className="text-gray-600 mb-4">{skill.level}</p>
+                  <p className="text-white mb-4">{skill.level}</p>
                   <div className="w-full bg-gray-300 rounded h-4">
                     <motion.div
                       className="bg-yellow-400 h-4 rounded"
