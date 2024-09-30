@@ -3,13 +3,14 @@ import ProfilePicture from '../components/ProfilePicture.tsx';
 import ExperienceComponent from '../components/ExperienceComponent.tsx';
 import SkillComponent from '../components/SkillComponent.tsx';
 import { useTranslation } from 'react-i18next';
+import DownloadCvButton from '../components/DownloadCvButton.tsx';
 
 export default function About() {
   const { t } = useTranslation();
 
   return (
     <>
-      <div className="bg-gradient-to-r from-black via-black to-pink-600 py-20 min-h-screen">
+      <div className="bg-gradient-to-br from-black via-black to-pink-600 py-20 min-h-screen">
         <div className="container mx-auto max-w-4xl">
           {/* Header avec animation */}
           <motion.h1
@@ -29,7 +30,7 @@ export default function About() {
             transition={{ delay: 0.2, duration: 1 }}
           >
             {/* Photo */}
-            <ProfilePicture linkProfile={'/profil.jpg'} altPicture={t('profile_picture_alt')} />
+            <ProfilePicture linkProfile={'/img.png'} altPicture={t('profile_picture_alt')} />
 
             {/* Profil */}
             <div className="md:w-2/3 md:pl-6">
@@ -88,6 +89,7 @@ export default function About() {
                               description="Teamwork, Problem Solving, Communication" />
             </div>
           </motion.div>
+          <DownloadCvButton />
         </div>
       </div>
     </>

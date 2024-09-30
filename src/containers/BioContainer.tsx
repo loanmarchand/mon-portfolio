@@ -7,7 +7,7 @@ export default function BioContainer() {
     return (
       <section className="py-20">
           <div className="container mx-auto flex flex-col md:flex-row items-center gap-12">
-              <ProfilePicture linkProfile={'/profil.jpg'} altPicture={'Loan Marchand'} />
+            <ProfilePicture linkProfile={'/img.png'} altPicture={'Loan Marchand'} />
               <motion.div
                 className="md:w-2/3 text-center md:text-left text-white"
                 initial={{ opacity: 0 }}

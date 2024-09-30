@@ -50,6 +50,7 @@ const resources = {
       skills_tools: 'Tools',
       skills_soft_skills: 'Soft Skills',
       back_home: 'Back to home',
+      download_cv: 'Download my CV',
     },
   },
   fr: {
@@ -99,6 +100,7 @@ const resources = {
       skills_tools: 'Outils',
       skills_soft_skills: 'Compétences relationnelles',
       back_home: 'Retour à l\'accueil',
+      download_cv: 'Télécharger mon CV',
 
 
     },

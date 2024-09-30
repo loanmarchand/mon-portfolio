@@ -51,7 +51,7 @@ export default function Contact() {
     return (
       <>
           <section id="contact"
-                   className="bg-gradient-to-r from-black via-black to-pink-600 min-h-screen flex flex-col justify-between pt-20">
+                   className="bg-gradient-to-br from-black via-black to-pink-600 min-h-screen flex flex-col justify-between pt-20">
               <div className="container mx-auto text-center flex-grow">
                   {/* Titre de la section avec animation */}
                   <motion.h2

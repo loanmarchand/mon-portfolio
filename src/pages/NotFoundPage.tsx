@@ -7,7 +7,7 @@ export default function NotFoundPage() {
 
   return (
     <div
-      className="relative bg-gradient-to-r from-black via-black to-pink-600 min-h-screen flex flex-col justify-center items-center overflow-hidden">
+      className="relative bg-gradient-to-br from-black via-black to-pink-600 min-h-screen flex flex-col justify-center items-center overflow-hidden">
 
       {/* Animation de fond avec des particules */}
       <div className="absolute inset-0 z-0">

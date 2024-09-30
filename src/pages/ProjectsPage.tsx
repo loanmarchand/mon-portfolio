@@ -6,7 +6,7 @@ export default function Projects() {
 
   return (
     <>
-      <div className="bg-gradient-to-r from-black via-black to-pink-600 py-16 min-h-screen">
+      <div className="bg-gradient-to-br from-black via-black to-pink-600 py-16 min-h-screen">
         <div className="container mx-auto px-6">
           <h1 className="text-5xl font-extrabold text-center text-yellow-400 mb-12">
             {t('projects')}
