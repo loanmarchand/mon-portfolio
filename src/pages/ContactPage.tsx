@@ -3,8 +3,9 @@ import { FaFacebook, FaFacebookMessenger, FaGithub, FaLinkedin, FaXTwitter } fro
 import { IoMail } from 'react-icons/io5';
 import { FormEvent, useRef, useState } from 'react';
 import emailjs from '@emailjs/browser';
-import LinkSocialMedia from '../components/LinkSocialMedia.tsx';
+import LinkSocialMedia from '../components/LinkSocialMedia';
 import { useTranslation } from 'react-i18next';
+import TitlePage from '../components/TitlePage.tsx';
 
 export default function Contact() {
     const [statusMessage, setStatusMessage] = useState("");
@@ -50,18 +51,10 @@ export default function Contact() {
 
     return (
       <>
-          <section id="contact"
-                   className="bg-gradient-to-br from-black via-black to-pink-600 min-h-screen flex flex-col justify-between pt-20">
+          <section id="contact" className="flex flex-col justify-between pt-20">
               <div className="container mx-auto text-center flex-grow">
                   {/* Titre de la section avec animation */}
-                  <motion.h2
-                    className="text-4xl font-extrabold text-white mb-12"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 1 }}
-                  >
-                      {t('contact_title')}
-                  </motion.h2>
+                  <TitlePage title={t('contact_title')} />
 
                   {/* Liens vers réseaux sociaux */}
                   <div className="flex justify-center space-x-8 mb-12">
@@ -139,15 +132,16 @@ export default function Contact() {
 
                   {/* Bouton Messenger animé */}
                   <motion.button
-                    className="flex items-center space-x-2 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:shadow-outline transition-transform transform hover:scale-105"
+                    className="fixed right-8 bottom-8 bg-blue-500 text-white px-4 py-3 rounded-full shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-transform transform hover:scale-110"
                     onClick={handleMessengerClick}
                     initial={{ scale: 1 }}
                     whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.9 }}
+                    whileTap={{ scale: 0.95 }}
                   >
-                      <FaFacebookMessenger size={24} />
-                      <span>{t('contact_title')}</span>
+                      <FaFacebookMessenger size={28} />
                   </motion.button>
+
+
               </div>
           </section>
       </>

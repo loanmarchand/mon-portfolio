@@ -13,7 +13,7 @@ export default function Footer() {
                   &copy; 2024 Loan Marchand. All Rights Reserved.
               </p>
               <p className="text-sm mt-1 text-gray-400">
-                  Designed with ❤️ and React
+                  Designed with React
               </p>
           </div>
       </motion.footer>

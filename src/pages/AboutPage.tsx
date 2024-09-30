@@ -1,26 +1,21 @@
 import { motion } from 'framer-motion';
-import ProfilePicture from '../components/ProfilePicture.tsx';
-import ExperienceComponent from '../components/ExperienceComponent.tsx';
-import SkillComponent from '../components/SkillComponent.tsx';
+import ProfilePicture from '../components/ProfilePicture';
+import ExperienceComponent from '../components/ExperienceComponent';
+import SkillComponent from '../components/SkillComponent';
 import { useTranslation } from 'react-i18next';
-import DownloadCvButton from '../components/DownloadCvButton.tsx';
+import DownloadCvButton from '../components/DownloadCvButton';
+import TitlePage from '../components/TitlePage.tsx';
 
 export default function About() {
   const { t } = useTranslation();
 
   return (
     <>
-      <div className="bg-gradient-to-br from-black via-black to-pink-600 py-20 min-h-screen">
+      {/* Enveloppe générale pour le contenu de la page */}
+      <div className="py-20">
         <div className="container mx-auto max-w-4xl">
           {/* Header avec animation */}
-          <motion.h1
-            className="text-5xl font-extrabold text-center text-yellow-400 mb-12"
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            {t('cv_title')}
-          </motion.h1>
+          <TitlePage title={t('cv_title')} />
 
           {/* Section Photo et Profil */}
           <motion.div
@@ -89,6 +84,8 @@ export default function About() {
                               description="Teamwork, Problem Solving, Communication" />
             </div>
           </motion.div>
+
+          {/* Bouton de téléchargement de CV */}
           <DownloadCvButton />
         </div>
       </div>

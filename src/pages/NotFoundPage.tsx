@@ -7,14 +7,14 @@ export default function NotFoundPage() {
 
   return (
     <div
-      className="relative bg-gradient-to-br from-black via-black to-pink-600 min-h-screen flex flex-col justify-center items-center overflow-hidden">
+      className="relative bg-gradient-to-br from-black via-black to-blue-600 min-h-screen flex flex-col justify-center items-center overflow-hidden">
 
       {/* Animation de fond avec des particules */}
       <div className="absolute inset-0 z-0">
         <div
           className="absolute top-1/4 left-1/3 w-72 h-72 bg-yellow-400 rounded-full opacity-20 blur-xl animate-ping"></div>
         <div
-          className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-pink-600 rounded-full opacity-20 blur-xl animate-pulse"></div>
+          className="absolute bottom-1/4 right-1/4 w-72 h-72 bg-blue-600 rounded-full opacity-20 blur-xl animate-pulse"></div>
       </div>
 
       {/* Texte principal */}

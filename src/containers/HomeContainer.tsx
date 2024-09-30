@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import TitlePage from '../components/TitlePage.tsx';
 
 export default function HomeContainer() {
   const { t } = useTranslation();
@@ -12,7 +13,7 @@ export default function HomeContainer() {
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-5xl font-extrabold mb-6">{t('welcome')}</h1>
+        <TitlePage title={t('welcome')} />
         <p className="text-xl mb-12">{t('discover')}</p>
         <Link
           to="/Projects"

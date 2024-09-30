@@ -24,7 +24,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-black via-black to-pink-600 min-h-screen">
+    <>
       {loading ? (
         <Loader />
       ) : (
@@ -38,6 +38,6 @@ export default function HomePage() {
           <SkillsContainer />
         </motion.div>
       )}
-    </div>
+    </>
   );
 }
