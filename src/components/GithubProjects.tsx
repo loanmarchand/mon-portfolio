@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 // Définition de l'interface pour un projet GitHub
@@ -9,7 +9,7 @@ interface GithubRepo {
     html_url: string;
 }
 
-const GithubProjects: React.FC = () => {
+export default function GithubProjects() {
     const [repos, setRepos] = useState<GithubRepo[]>([]);
 
     useEffect(() => {
@@ -42,5 +42,3 @@ const GithubProjects: React.FC = () => {
       </div>
     );
 };
-
-export default GithubProjects;
